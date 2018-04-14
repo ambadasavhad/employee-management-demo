@@ -1,8 +1,5 @@
-<h1>
-  Employee List 
-</h1>
-<div class="grid-wrapper" style="width: 100%;">
-  <ag-grid-angular style=" width:100%; height: 512px;" class="ag-theme-blue" [rowData]="rowData" [columnDefs]="columnDefs" [gridOptions]="gridOptions" [pagination]="true" [paginationPageSize]=5
+<div class="grid-wrapper">
+  <ag-grid-angular class="ag-theme-blue employees-grid" [rowData]="rowData" [columnDefs]="columnDefs" [gridOptions]="gridOptions" [pagination]="true" [paginationPageSize]=5
     enableSorting enableFilter>
   </ag-grid-angular>
 </div>
