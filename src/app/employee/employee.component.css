@@ -1,0 +1,14 @@
+.heading-text{
+    text-align: center;
+}
+
+.grid-wrapper{
+    width: 100%;
+    margin-top: 30px;
+}
+
+.employees-grid{
+    width:802px; 
+    height:240px;
+    margin:auto;
+}

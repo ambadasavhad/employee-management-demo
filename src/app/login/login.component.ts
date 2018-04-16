@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { Observable } from 'rxjs/Observable';
 import { tap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
+import { environment } from '../../environments/environment';
 
 import { NavbarService } from '../navbar/navbar.service';
 
@@ -23,8 +24,9 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.http.post('/api/signin', this.loginData).subscribe(resp => {
+    this.http.post(environment.apiURL+'/signin', this.loginData).subscribe(resp => {
       this.data = resp;
+      this.nav.setUserName(this.data.user.username);
       localStorage.setItem('jwtToken', this.data.token);
       this.router.navigate(['employees']);
     }, err => {

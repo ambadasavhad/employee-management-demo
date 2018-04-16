@@ -11,6 +11,9 @@ var config = require('./config/database');
 
 var api = require('./routes/api');
 var app = express();
+var cors = require('cors');
+// use it before all route definitions
+app.use(cors({origin: 'http://localhost:4200'}));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -23,12 +26,6 @@ app.use('/signup', express.static(path.join(__dirname, 'dist')));
 app.use('/api', api);
 app.use(passport.initialize());
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
 
 // error handler
 app.use(function(err, req, res, next) {

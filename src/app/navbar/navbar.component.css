@@ -1,0 +1,18 @@
+.justify-center{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.user-info{
+    width: 210px;
+    text-align: center;
+    line-height: 2;
+}
+
+.user-name{
+    float: left;
+}
+.logout-btn{
+    margin-left: 5px;
+}
