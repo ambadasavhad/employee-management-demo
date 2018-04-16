@@ -1,5 +1,9 @@
 <div class="grid-wrapper">
-  <ag-grid-angular class="ag-theme-blue employees-grid" [rowData]="rowData" [columnDefs]="columnDefs" [gridOptions]="gridOptions" [pagination]="true" [paginationPageSize]=5
-    enableSorting enableFilter>
-  </ag-grid-angular>
+  <ng2-smart-table 
+      [settings]="settings" 
+      [source]="source" 
+      (deleteConfirm)="onDeleteConfirm($event)"
+      (editConfirm)="onSaveConfirm($event)"
+      (createConfirm)="onCreateConfirm($event)">
+    </ng2-smart-table>
 </div>

@@ -12,7 +12,8 @@ export class NavbarComponent implements OnInit {
   constructor(public nav: NavbarService,private router: Router, ) { }
 
   ngOnInit() {
-    this.username='Ambadas Avhad';
+    this.username=this.nav.getUserName();
+    console.log('name',this.username);
   }
 
    logout() {

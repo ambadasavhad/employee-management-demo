@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
-import {AgGridModule} from 'ag-grid-angular/main';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -52,7 +52,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    AgGridModule.withComponents([])
+    Ng2SmartTableModule
   ],
   providers: [NavbarService],
   bootstrap: [AppComponent]

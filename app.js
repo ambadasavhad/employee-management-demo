@@ -11,6 +11,9 @@ var config = require('./config/database');
 
 var api = require('./routes/api');
 var app = express();
+var cors = require('cors');
+// use it before all route definitions
+app.use(cors({origin: 'http://localhost:4200'}));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

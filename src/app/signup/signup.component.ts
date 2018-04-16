@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { Observable } from 'rxjs/Observable';
 import { tap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +20,7 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
-  this.http.post('/api/signup',this.signupData).subscribe(resp => {
+  this.http.post(environment.apiURL+'/signup',this.signupData).subscribe(resp => {
     this.router.navigate(['login']);
   }, err => {
     this.message = err.error.msg;
